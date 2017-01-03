@@ -63,7 +63,7 @@ __1. Create Post__
     })
 ```
 
-> snippet.body valid keys
+> snippet.body 
     
 - title* : String 
 - preview* : String (Short Decription of post)

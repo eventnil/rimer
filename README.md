@@ -135,6 +135,7 @@ __4. Unpublish Post__
 ```
 
 > snippet.query
+
 - id* : String (Post Id)
 
 > response.value : String
@@ -325,6 +326,7 @@ __1. Create Author__
 - other: String
 
 > response.value : JSON
+
 - Created author data and id
 
 __2. Update Author__
@@ -391,7 +393,8 @@ __4. Get Author By Id__
 - any extra key in fields not present in author will be not available in response
 
 > response.value : JSON
-> Deleting an author will remove all its refrence from posts
+
+- Deleting an author will remove all its refrence from posts
 
 __5. Get Authors__
 ```js

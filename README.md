@@ -74,6 +74,7 @@ __1. Create Post__
 - description: String (Body of post)
 
 > response.value : JSON
+
 - Created post data and id
 
 __2. Update Post__
@@ -91,15 +92,18 @@ __2. Update Post__
 ```
 
 > snippet.query
+
 - id* : String (Post Id returned with post details)
 - published : Boolean (default true indicating post is in published state)
 
 > snippet.body
+
 - title, preview, category, thumbnail, description as string
 - tags, images as string (comma seperated values)
 - set optional valid keys in body as "" to remove that value from post
 
 > response.value : JSON
+
 - Updated post raw data
 
 __3. Publish Post__
@@ -116,9 +120,11 @@ __3. Publish Post__
 ```
 
 > snippet.query
+
 - id* String (Post Id)
 
 > response.value : String
+
 - Published Post Id
 
 __4. Unpublish Post__
@@ -139,6 +145,7 @@ __4. Unpublish Post__
 - id* : String (Post Id)
 
 > response.value : String
+
 - Unpubublished Post Id
 
 __5. Delete Post__
@@ -155,6 +162,7 @@ __5. Delete Post__
 ```
 
 > snippet.query
+
 - id* : String (Post Id)
 - published : Boolean (default true indicating post is in published state)
 
@@ -173,15 +181,18 @@ __6. Get Post By Id__
 ```
 
 > snippet.query
+
 - id* : String (Post Id)
 - published : (default true indicating post is in published state)
 
 > snippet.fields
+
 - String (comma sepearted value of keys to be returned in each post)
 - valid keys for post will only be returned
 - any extra key not present in post will be not available in response
 
 > response.value : JSON
+
 - Post Detail
 
 __7. Get Posts__
@@ -199,15 +210,18 @@ __7. Get Posts__
 ```
 
 > snippet.query
+
 - published : Boolean (default true indicating post is in published state)
 - nextkey : String (Returned in previous response to return next set of post)
 
 > snippet.fields
+
 - String (comma sepearted value of keys to be returned in each post)
 - valid keys for post will only be returned
 - any extra key not present in post will be null in response
 
 > response.value: Array
+
 - Array of post json (Can be empty array if no post available)
 > response.nextKey: String 
 - Returned only if next set of data available
@@ -227,13 +241,16 @@ __8. Get Posts By Category__
 ```
 
 > snippet.query
+
 - category*: String (Post Id)
 
 > snippet.fields
+
 - String (comma sepearted value of keys to be returned in each post)
 - valid keys for post will only be returned
 
 > response.value: Array
+
 - Array of published post for a category (Can be empty array if no post available)
 
 __9. Get Posts By Author__
@@ -251,13 +268,16 @@ __9. Get Posts By Author__
 ```
 
 > snippet.query
+
 - authorId*: String (Author Id)
 
 > snippet.fields
+
 - String (comma sepearted value of keys to be returned in each post)
 - valid keys for post will only be returned
 
 > response.value: Array
+
 - Array of published post by an author (Can be empty array if no post available)
 
 __10. Add Post Author__
@@ -275,6 +295,7 @@ __10. Add Post Author__
 ```
 
 > snippet.query
+
 - id* : String (Post Id)
 - authorId* : String (Author Id)
 - published : Boolean (default true indicating post is in published state)
@@ -294,6 +315,7 @@ __11. Remove Post Author__
 ```
 
 > snippet.query
+
 - id* : String (Post Id)
 - authorId : String (Author Id)
 - published : Boolean (default true indicating post is in published state)
@@ -314,7 +336,7 @@ __1. Create Author__
 ```
 
 > snippet.body
-    
+
 - name* : String 
 - about* : String (Short Decription of post)
 - image : String 
@@ -344,13 +366,16 @@ __2. Update Author__
 ```
 
 > snippet.query
+
 - id* : String (Author Id returned with author deleteP)
 
 > snippet.body
+
 - name, about, image, thumbnail, facebook, twitter, instagram, snapchat, other as string
 - set optional valid keys in body as "" to remove that value from author
 
 > response.value : JSON
+
 - Updated author raw data
 
 __3. Delete Author__
@@ -367,6 +392,7 @@ __3. Delete Author__
 ```
 
 > snippet.query
+
 - id*: String (Author Id)
 
 __4. Get Author By Id__
@@ -384,10 +410,12 @@ __4. Get Author By Id__
 ```
 
 > snippet.query
+
 - id* : String (Post Id)
 - published : Boolean (default true indicating post is in published state)
 
 > snippet.fields
+
 - String (comma sepearted value of keys to be returned in each post)
 - valid keys for author will only be returned
 - any extra key in fields not present in author will be not available in response
@@ -411,11 +439,13 @@ __5. Get Authors__
 ```
 > snippet.query : {}
 > snippet.fields
+
 - String (comma sepearted value of keys to be returned in each author detail)
 - valid keys for author will only be returned
 - any extra key not present in author will be null in response
 
 > response.value : Array
+
 - Array of author json (Can be empty array if no author available)
 
 ## Category Services
@@ -430,5 +460,6 @@ __1. Get Published Categories__
     })
 ```
 > response.value : Array
+
 - Array of category json (Can be empty array if no author available)
 - Each category is a json of name and count(total post in a particular category)
